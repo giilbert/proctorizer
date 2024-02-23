@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface Input {
-  x: number;
-  y: number;
+  teachersCSV: string;
+  testsCSV: string;
 }
 
 export interface Output {
-  product: number;
+  csv: string;
 }
 
 type WorkerState =
