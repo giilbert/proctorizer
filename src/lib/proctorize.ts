@@ -9,7 +9,7 @@ const CSVtoJSON = (csv: string) => {
   const result = [];
   const headers = lines[0].split(",");
 
-  for (const line of lines) {
+  for (const line of lines.slice(1)) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const obj: any = {};
     const currentline = line.split(",");
@@ -23,11 +23,26 @@ const CSVtoJSON = (csv: string) => {
   return result;
 };
 
+/*
+ *
+ *
+ * OLIVER DO YOUR MATH IN THE COMPUTE FUNCTION BELOW
+ * TEACHERS	AND TESTS ARE THE ARRAYS OF JSON OBJECTS WITH ALL THE DATA
+ * EXAMPLE: [
+ * 	{NAME: "WHATEVER", SHIFT: "WHATEVER", SUBJECT: "WHATEVER"}
+ * ]
+ *
+ * HAVE FUN
+ *
+ *
+ */
+
 const compute = (input: Input): Output => {
   const teachers = CSVtoJSON(input.teachersCSV);
   const tests = CSVtoJSON(input.testsCSV);
 
   console.log(teachers);
+  console.log(tests);
 
   return { csv: JSON.stringify(teachers) };
 };
