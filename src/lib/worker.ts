@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface Input {
-  teachersCSV: string;
-  testsCSV: string;
+  teachersAsCsv: string;
+  testsAsCsv: string;
 }
 
 export interface Output {

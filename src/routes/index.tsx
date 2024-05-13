@@ -29,11 +29,12 @@ const IndexPage: React.FC = () => {
 
             const res = (await Promise.all(files)) as string[];
             worker.compute({
-              teachersCSV: res[0],
-              testsCSV: res[1],
+              teachersAsCsv: res[0],
+              testsAsCsv: res[1],
             });
           }
-        }}>
+        }}
+      >
         <div className="grid grid-cols-2 w-2/3 gap-4">
           <label htmlFor="teachers">Teachers:</label>
           <Input type="file" name="teachers" id="teachers" />
